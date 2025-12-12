@@ -30,7 +30,6 @@ export const filmeSchema = z.object({
 });
 
 export const ClassificacaoIndicativa = [
-    'Sem Classificação',
     'Livre',
     '10',
     '12',
@@ -40,7 +39,6 @@ export const ClassificacaoIndicativa = [
 ];
 
 export const Genero = [
-    'Sem Gênero',
     'Terror',
     'Comédia',
     'Ação',

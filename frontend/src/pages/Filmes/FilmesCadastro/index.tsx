@@ -73,8 +73,8 @@ export const FilmesCadastro = ({ filme, onSave, onCancel, erros = {} }: FilmesCa
                                         id="duracao"
                                         type="number"
                                         placeholder="Digite a duração do filme em minutos"
-                                        value={filmeState.duracao}
-                                        onChange={handleChange}
+                                        value={filmeState.duracao === 0 ? '' : filmeState.duracao}
+                                        onChange={(e) => setFilmeState({...filmeState,duracao: Number(e.target.value)})}
                                         error={erros.duracao}
                                     />
                                     <Input
@@ -133,7 +133,7 @@ export const FilmesCadastro = ({ filme, onSave, onCancel, erros = {} }: FilmesCa
                                         value={filmeState.id ? "Atualizar" : "Salvar"}
                                         variant={filmeState.id ? "warning" : "primary"}
                                         type="submit"
-                                        onClick={ () => {onSave(filmeState)}}
+                                        onClick={() => { onSave(filmeState) }}
                                     />
                                 </div>
                             </div>

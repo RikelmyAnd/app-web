@@ -38,6 +38,7 @@ const validarFilmes = (filme: IFilme): IFilme | null => {
     const result = filmeSchema.safeParse(filme);
 
     if (!result.success) {
+        console.log("ERROS DE VALIDAÇÃO:", result.error.format());
         const errosFormatados: Record<string, string> = {};
         result.error.issues.forEach((err) => {
             if (err.path[0]) {
