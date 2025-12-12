@@ -33,7 +33,7 @@ useEffect(() => {
  * @returns Dados validados ou null se houver erro
  */
 const validarFilmes = (filme: IFilme): IFilme | null => {
-    setErrors({});
+    setErrorsState({});
 
     const result = filmeSchema.safeParse(filme);
 
@@ -44,7 +44,7 @@ const validarFilmes = (filme: IFilme): IFilme | null => {
                 errosFormatados[err.path[0] as string] = err.message;
             }
         });
-        setErrors(errosFormatados);
+        setErrorsState(errosFormatados);
         return null;
     }
 
@@ -63,7 +63,7 @@ const isEdicao = (filme: IFilme): boolean => {
  */
 const limparFormulario = () => {
     setFilme(null);
-    setErrors({});
+    setErrorsState({});
     setKeyReiniciar(prev => prev + 1);
 };
 
@@ -75,7 +75,7 @@ const limparFormulario = () => {
 const handleCreate = async (filme: IFilme) => {
     try {
         // Remove a propriedade 'id' antes de enviar
-        const { ...dadosNovoFilme } = filme;
+        const {id, ...dadosNovoFilme } = filme;
 
         const novoFilme = await filmesService.create(dadosNovoFilme as IFilme);
         setListaFilmes((listaAtual) => [...listaAtual, novoFilme]);
@@ -129,7 +129,7 @@ const handleCancel = () => {
  */
 const handleEdit = (usuario: IFilme) => {
     setFilme(usuario);
-    setErrors({});
+    setErrorsState({});
 };
 
 /**
@@ -176,8 +176,4 @@ return (
     </>
 );
 
-
-function setErrors(arg0: any) {
-    setErrorsState(arg0);
-}
 }
