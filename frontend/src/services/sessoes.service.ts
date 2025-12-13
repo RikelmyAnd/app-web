@@ -1,7 +1,7 @@
 import { type ISessao } from "../models/sessao.model";
 
 // Variáveis de ambiente
-const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:3000/sessao';
+const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:3000/sessoes';
 
 export class SessoesService {
     

@@ -4,7 +4,8 @@ export interface ISessao {
     id: string;
     horario: string;
     filmeId: string;
-    salaId: string[];
+    salaId: string;
+    valorIngresso?: number;
 }
 
 export const sessaoSchema = z.object({
@@ -13,5 +14,6 @@ export const sessaoSchema = z.object({
         message: 'Horário inválido'
     }),
     filmeId: z.string().uuid(),
-    salaId: z.string().uuid()
+    salaId: z.string().uuid(),
+    valorIngresso: z.number().min(0).optional(),
 });

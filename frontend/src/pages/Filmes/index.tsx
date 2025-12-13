@@ -128,8 +128,8 @@ const handleCancel = () => {
 /**
  * Prepara o formulário para edição de um usuário
  */
-const handleEdit = (usuario: IFilme) => {
-    setFilme(usuario);
+const handleEdit = (filme: IFilme) => {
+    setFilme(filme);
     setErrorsState({});
 };
 
