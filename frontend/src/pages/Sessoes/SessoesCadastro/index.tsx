@@ -63,14 +63,18 @@ export const SessoesCadastro = ({ sessao, filmesDisponiveis, salasDisponiveis, o
 
                                     <div className="row">
                                         <div className="col-md-6">
-                                            <Input
-                                                name="Data e Hora"
-                                                id="dataHora"
-                                                type="datetime-local"
-                                                value={sessaoState.horario}
-                                                onChange={handleChange}
-                                                error={erros.horario}
-                                            />
+                                            <div className="mb-3">
+                                                <label htmlFor="dataHora" className="form-label">Data e Hora</label>
+                                                <input
+                                                    id="dataHora"
+                                                    name="dataHora"
+                                                    type="datetime-local"
+                                                    className={`form-control ${erros.horario ? 'is-invalid' : ''}`}
+                                                    defaultValue={String(sessaoState.horario || '').slice(0, 16)}
+                                                    onChange={(e) => { setSessaoState({ ...sessaoState, horario: e.target.value }); }}
+                                                />
+                                                {erros.dataHora && <div className="invalid-feedback">{erros.dataHora}</div>}
+                                            </div>
                                         </div>
                                         <div className="col-md-6">
                                             <Input
