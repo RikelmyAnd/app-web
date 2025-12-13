@@ -26,7 +26,14 @@ export const filmeSchema = z.object({
         }),
     dataFinalExibicao: z.string().refine((date) => !isNaN(Date.parse(date)), {
         message: 'Data final de exibição inválida',
-    }),
+    }),}).refine((data) => {
+    if (!data.dataInicialExibicao || !data.dataFinalExibicao) return true; 
+    const inicio = new Date(data.dataInicialExibicao);
+    const fim = new Date(data.dataFinalExibicao);
+    return fim >= inicio;
+}, {
+    message: "A data final não pode ser menor que a data inicial",
+    path: ["dataFinalExibicao"], 
 });
 
 export const ClassificacaoIndicativa = [

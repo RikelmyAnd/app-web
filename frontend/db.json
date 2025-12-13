@@ -21,6 +21,17 @@
       "genero": "Drama",
       "dataInicialExibicao": "2025-12-17",
       "dataFinalExibicao": "2025-12-31"
+    },
+    {
+      "titulo": "V de vingança",
+      "sinopse": "Vingança eu acho",
+      "classificacaoIndicativa": "14",
+      "duracao": 61,
+      "elenco": "V",
+      "genero": "Terror",
+      "dataInicialExibicao": "2025-12-10",
+      "dataFinalExibicao": "2025-12-11",
+      "id": "6943"
     }
   ],
   "sessoes": [
