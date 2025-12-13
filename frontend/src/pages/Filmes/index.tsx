@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { filmeSchema, type IFilme } from "../../models/filmes.model";
 import { FilmesCadastro } from "./FilmesCadastro";
 import { filmesService } from "../../services/filmes.service";
+import { FilmeTable } from "./FilmesTabela";
 {/*import { FilmeTable } from "./FilmesTabela";*/}
 
 export const Filmes = () => {
@@ -163,7 +164,7 @@ return (
                     />
                 </div>
 
-                {/*<div className="col-20 col-md-20 col-lg-20">
+                <div className="col-20 col-md-20 col-lg-20">
                     <hr />
                     <FilmeTable
                         filmes={listaFilmes}
@@ -171,7 +172,7 @@ return (
                         onDelete={handleDelete}
                         filmeEmEdicao={filme}
                     />
-                </div>*/}
+                </div>
             </div>
         </>
     </>

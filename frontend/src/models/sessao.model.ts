@@ -11,7 +11,7 @@ export interface ISessao {
 export const sessaoSchema = z.object({
     id: z.string(),
     dataHora: z.string(),
-    filmeId: z.string().uuid().or(z.literal('')),
-    salaId: z.string().uuid().or(z.literal('')),
+    filmeId: z.string().min(1, "Selecione um filme"),
+    salaId: z.string().min(1, "Selecione uma sala"),
     valorIngresso: z.number().min(0).optional()
 });

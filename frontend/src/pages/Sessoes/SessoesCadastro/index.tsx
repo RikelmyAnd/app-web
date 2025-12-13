@@ -38,7 +38,7 @@ export const SessoesCadastro = ({ sessao, filmesDisponiveis, salasDisponiveis, o
                 <div className="col-12">
                     <div className="card shadow">
                         <div className="card-body bg-light">
-                            <h5 className="card-title">Cadastro de Sessôes</h5>
+                            <h5 className="card-title">Cadastro de Sessões</h5>
                             <hr />
                             <div className="container">
                                 <form onSubmit={(e) => { e.preventDefault(); onSave(sessaoState); }} >
