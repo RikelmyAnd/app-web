@@ -41,6 +41,13 @@
       "salaId": "ce47",
       "valorIngresso": 20,
       "id": "8bd2"
+    },
+    {
+      "id": "930e",
+      "dataHora": "2025-12-13T10:00",
+      "filmeId": "6943",
+      "salaId": "dfd3",
+      "valorIngresso": 30
     }
   ],
   "salas": [
@@ -53,6 +60,16 @@
         []
       ],
       "id": "ce47"
+    },
+    {
+      "id": "dfd3",
+      "nome": "Sala-Vip",
+      "numero": 10,
+      "capacidade": 2,
+      "tipo": "3D",
+      "assento": [
+        []
+      ]
     }
   ],
   "lanches": [
@@ -173,6 +190,57 @@
         }
       ],
       "valorTotal": 443
+    },
+    {
+      "id": "2f27",
+      "sessaoId": "930e",
+      "dataCompra": "2025-12-13T10:11:58.000Z",
+      "ingressos": [
+        {
+          "assento": "Assento 1",
+          "tipo": "meia",
+          "preco": 15
+        },
+        {
+          "assento": "Assento 2",
+          "tipo": "inteira",
+          "preco": 30
+        }
+      ],
+      "lanches": [
+        {
+          "lancheId": "2",
+          "nome": "Pipoca Grande",
+          "precoUnitario": 22,
+          "quantidade": 2
+        },
+        {
+          "lancheId": "3",
+          "nome": "Refrigerante 500ml",
+          "precoUnitario": 8,
+          "quantidade": 2
+        }
+      ],
+      "valorTotal": 105
+    },
+    {
+      "id": "3d69",
+      "sessaoId": "8bd2",
+      "dataCompra": "2025-12-13T10:46:25.065Z",
+      "ingressos": [
+        {
+          "assento": "Assento 1",
+          "tipo": "inteira",
+          "preco": 20
+        },
+        {
+          "assento": "Assento 2",
+          "tipo": "inteira",
+          "preco": 20
+        }
+      ],
+      "lanches": [],
+      "valorTotal": 40
     }
   ]
 }

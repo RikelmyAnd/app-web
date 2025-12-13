@@ -15,8 +15,7 @@ export interface IFilme {
 export const filmeSchema = z.object({
     id: z.string(),
     titulo: z.string().min(1, 'O título é obrigatório'),
-    sinopse: z.string().min(1, 'A sinopse é obrigatória')
-    .min(10, 'A sinopse deve ter no mínimo 10 caracteres'),
+    sinopse: z.string().min(1, 'A sinopse é obrigatória').min(10, 'A sinopse deve ter no mínimo 10 caracteres'),
     classificacaoIndicativa: z.enum(['Livre', '10', '12', '14', '16', '18']),
     duracao: z.number().min(1, 'A duração deve ser maior que 0'),
     elenco: z.string().optional(),
