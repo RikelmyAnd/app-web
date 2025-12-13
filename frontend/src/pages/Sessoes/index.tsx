@@ -119,17 +119,35 @@ const handleUpdate = async (sessao: ISessao) => {
  * Salva usuário (cria ou edita baseado no ID)
  */
 const handleSave = async (sessao: ISessao) => {
-    const sessaoValidada = validarSessoes(sessao);
-    console.log("Salvando sessão:", sessao);
-
-    if (!sessaoValidada) {
+    console.log("1. Iniciando validação...");
+    const result = sessaoSchema.safeParse(sessao);
+    console.log("2. Passou validação. Preparando envio...", sessao);
+    if (!result.success) {
+        setErrorsState({});
         return; // Validação falhou, erros já foram setados
     }
+    console.log("2. Passou validação. Preparando envio...", sessao);
 
-    if (isEdicao(sessaoValidada)) {
-        handleUpdate(sessaoValidada);
-    } else {
-        handleCreate(sessaoValidada);
+   try {
+        const { id, ...dadosParaSalvar } = sessao;
+        
+        if (id) {
+            console.log("3. Chamando update...");
+            await sessoesService.update(sessao.id, sessao);
+        } else {
+            console.log("3. Chamando create com:", dadosParaSalvar);
+            await sessoesService.create(dadosParaSalvar as ISessao);
+        }
+
+        console.log("4. SUCESSO! Recarregando lista..."); // LOG 4
+        alert("Salvo com sucesso!"); // Feedback visual
+        carregarDados();
+        setVisao('lista');
+        
+        // ... (resto do código de sucesso)
+    } catch (error) {
+        console.error("5. ERRO CRÍTICO NA API:", error); // LOG DE ERRO
+        alert("Erro ao salvar. Verifique o console (F12).");
     }
 };
 

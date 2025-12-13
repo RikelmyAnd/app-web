@@ -18,7 +18,7 @@ interface SessoesCadastro {
 }
 
 export const SessoesCadastro = ({ sessao, filmesDisponiveis, salasDisponiveis, onSave, onCancel, erros = {} }: SessoesCadastro) => {
-    const [sessaoState, setSessaoState] = useState<ISessao>(sessao || { id: '', horario: '', salaId: '', filmeId: '', valorIngresso: 0 });
+    const [sessaoState, setSessaoState] = useState<ISessao>(sessao || { id: '', dataHora: '', salaId: '', filmeId: '', valorIngresso: 0 });
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const { name, value } = e.target;
         setSessaoState({ ...sessaoState, [name]: value });
@@ -69,9 +69,9 @@ export const SessoesCadastro = ({ sessao, filmesDisponiveis, salasDisponiveis, o
                                                     id="dataHora"
                                                     name="dataHora"
                                                     type="datetime-local"
-                                                    className={`form-control ${erros.horario ? 'is-invalid' : ''}`}
-                                                    defaultValue={String(sessaoState.horario || '').slice(0, 16)}
-                                                    onChange={(e) => { setSessaoState({ ...sessaoState, horario: e.target.value }); }}
+                                                    className={`form-control ${erros.dataHora ? 'is-invalid' : ''}`}
+                                                    defaultValue={String(sessaoState.dataHora || '').slice(0, 16)}
+                                                    onChange={(e) => { setSessaoState({ ...sessaoState, dataHora: e.target.value }); }}
                                                 />
                                                 {erros.dataHora && <div className="invalid-feedback">{erros.dataHora}</div>}
                                             </div>

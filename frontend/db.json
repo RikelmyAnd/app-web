@@ -10,6 +10,17 @@
       "genero": "Terror",
       "dataInicialExibicao": "2025-12-01",
       "dataFinalExibicao": "2025-12-19"
+    },
+    {
+      "id": "e67c",
+      "titulo": "Undertale, o Filme",
+      "sinopse": "Uma recriação do jogo em formato de filme live action",
+      "classificacaoIndicativa": "10",
+      "duracao": 120,
+      "elenco": "Sans, Papyrus, Flowey, Undine",
+      "genero": "Drama",
+      "dataInicialExibicao": "2025-12-17",
+      "dataFinalExibicao": "2025-12-31"
     }
   ],
   "sessoes": []

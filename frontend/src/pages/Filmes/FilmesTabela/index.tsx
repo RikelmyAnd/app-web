@@ -1,4 +1,4 @@
-import { Button } from "../../../components/Button";
+{/*import { Button } from "../../../components/Button";
 import type { IFilme } from "../../../models/filmes.model";
 
 
@@ -66,4 +66,4 @@ export const FilmeTable = (
             </table>
         </>
     );
-}
+}*/}
