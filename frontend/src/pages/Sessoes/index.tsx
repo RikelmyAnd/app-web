@@ -180,6 +180,8 @@ export const Sessoes = () => {
                         <hr />
                         <SessaoTable
                             sessoes={listaSessoes}
+                            filmes={listaFilmes}
+                            salas={listaSalas}
                             onEdit={handleEdit}
                             onDelete={handleDelete}
                             sessaoEmEdicao={sessao} />

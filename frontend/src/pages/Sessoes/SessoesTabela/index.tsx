@@ -1,16 +1,24 @@
+import { useEffect, useState } from "react";
 import { Button } from "../../../components/Button";
 import type { ISessao } from "../../../models/sessao.model";
-
+import type { IFilme } from "../../../models/filmes.model";
+import type { ISala } from "../../../models/salas.model";
 
 interface SessaoTableProps {
     sessoes: ISessao[];
+    filmes: IFilme[];
+    salas: ISala[];
     onEdit: (sessao: ISessao) => void;
     onDelete: (sessaoId: string) => void;
     sessaoEmEdicao: ISessao | null; // Nova prop
 }
 
+
+
 export const SessaoTable = (
-    { sessoes, onEdit, onDelete, sessaoEmEdicao }: SessaoTableProps) => {
+    
+    
+    { sessoes, filmes, salas, onEdit, onDelete, sessaoEmEdicao }: SessaoTableProps) => {
 
     return (
         <>
@@ -27,14 +35,21 @@ export const SessaoTable = (
                 </thead>
                 <tbody>
                     {sessoes.map((sessao) => {
+                        const filmeEncontrado = filmes.find(f => f.id === sessao.filmeId);
+                        const salaEncontrada = salas.find(s => s.id === sessao.salaId);
                         const desabilitado = !!sessaoEmEdicao;
                         return (
                             <tr key={sessao.id}>
                                 <td>{sessao.id}</td>
-                                <td>{sessao.dataHora}</td>
-                                <td>{sessao.filmeId}</td>
-                                <td>{sessao.salaId}</td>
-                                <td>{sessao.valorIngresso}</td>
+                                <td>{new Date(sessao.dataHora).toLocaleString('pt-BR')}</td>
+                                <td>{filmeEncontrado ? filmeEncontrado.titulo : <span className="text-muted">Filme não encontrado ({sessao.filmeId})</span>}</td>
+                                <td>
+                                    {salaEncontrada
+                                        ? `${salaEncontrada.nome} - Nº ${salaEncontrada.numero}`
+                                        : <span className="text-muted">Sala não encontrada ({sessao.salaId})</span>
+                                    }
+                                </td>
+                                <td>{sessao.valorIngresso ? sessao.valorIngresso.toFixed(2) : '0.00'}</td>
                                 <td className="d-flex gap-2">
                                     <Button
                                         label="Editar"
@@ -50,10 +65,18 @@ export const SessaoTable = (
                                         onClick={() => onDelete(sessao.id || '')}
                                         disabled={desabilitado}
                                     />
+                                    <Button
+                                        label="Comprar Ingresso"
+                                        value=""
+                                        variant="dark"
+                                        onClick={() => onDelete(sessao.id || '')}
+                                        disabled={desabilitado}
+                                    />
                                 </td>
                             </tr>
                         );
                     })}
+                    
                 </tbody>
             </table>
         </>
