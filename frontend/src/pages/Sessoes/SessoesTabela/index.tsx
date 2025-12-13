@@ -3,6 +3,7 @@ import { Button } from "../../../components/Button";
 import type { ISessao } from "../../../models/sessao.model";
 import type { IFilme } from "../../../models/filmes.model";
 import type { ISala } from "../../../models/salas.model";
+import { useNavigate } from "react-router-dom";
 
 interface SessaoTableProps {
     sessoes: ISessao[];
@@ -15,11 +16,10 @@ interface SessaoTableProps {
 
 
 
-export const SessaoTable = (
-    
-    
-    { sessoes, filmes, salas, onEdit, onDelete, sessaoEmEdicao }: SessaoTableProps) => {
+export const SessaoTable = ( { sessoes, filmes, salas, onEdit, onDelete, sessaoEmEdicao }: SessaoTableProps) => {
 
+    const navigate = useNavigate();
+    
     return (
         <>
             <table className="table table-striped">
@@ -69,7 +69,7 @@ export const SessaoTable = (
                                         label="Comprar Ingresso"
                                         value=""
                                         variant="dark"
-                                        onClick={() => onDelete(sessao.id || '')}
+                                        onClick={() => navigate (`/comprar/${sessao.id}`)}
                                         disabled={desabilitado}
                                     />
                                 </td>

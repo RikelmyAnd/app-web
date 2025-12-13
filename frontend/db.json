@@ -25,11 +25,11 @@
   ],
   "sessoes": [
     {
-      "dataHora": "2025-12-11T04:16",
-      "filmeId": "bf64",
+      "dataHora": "2025-12-26T05:55",
+      "filmeId": "e67c",
       "salaId": "ce47",
       "valorIngresso": 20,
-      "id": "a50d"
+      "id": "8bd2"
     }
   ],
   "salas": [
@@ -42,6 +42,126 @@
         []
       ],
       "id": "ce47"
+    }
+  ],
+  "lanches": [
+    {
+      "id": "1",
+      "nome": "Pipoca Pequena",
+      "preco": 15
+    },
+    {
+      "id": "2",
+      "nome": "Pipoca Grande",
+      "preco": 22
+    },
+    {
+      "id": "3",
+      "nome": "Refrigerante 500ml",
+      "preco": 8
+    },
+    {
+      "id": "4",
+      "nome": "Combo Casal",
+      "preco": 45
+    }
+  ],
+  "pedidos": [
+    {
+      "id": "4abd",
+      "sessaoId": "8bd2",
+      "dataCompra": "2025-12-13T09:18:52.219Z",
+      "ingressos": [
+        {
+          "assento": "Assento 1",
+          "tipo": "meia",
+          "preco": 50
+        },
+        {
+          "assento": "Assento 2",
+          "tipo": "inteira",
+          "preco": 100
+        },
+        {
+          "assento": "Assento 3",
+          "tipo": "meia",
+          "preco": 50
+        },
+        {
+          "assento": "Assento 4",
+          "tipo": "inteira",
+          "preco": 100
+        }
+      ],
+      "lanches": [
+        {
+          "lancheId": "2",
+          "nome": "Pipoca Grande",
+          "precoUnitario": 22,
+          "quantidade": 6
+        },
+        {
+          "lancheId": "3",
+          "nome": "Refrigerante 500ml",
+          "precoUnitario": 8,
+          "quantidade": 5
+        },
+        {
+          "lancheId": "4",
+          "nome": "Combo Casal",
+          "precoUnitario": 45,
+          "quantidade": 6
+        }
+      ],
+      "valorTotal": 742
+    },
+    {
+      "id": "dde5",
+      "sessaoId": "8bd2",
+      "dataCompra": "2025-12-13T09:16:16.395Z",
+      "ingressos": [
+        {
+          "assento": "Assento 1",
+          "tipo": "meia",
+          "preco": 50
+        },
+        {
+          "assento": "Assento 2",
+          "tipo": "meia",
+          "preco": 50
+        },
+        {
+          "assento": "Assento 3",
+          "tipo": "inteira",
+          "preco": 100
+        },
+        {
+          "assento": "Assento 4",
+          "tipo": "meia",
+          "preco": 50
+        }
+      ],
+      "lanches": [
+        {
+          "lancheId": "1",
+          "nome": "Pipoca Pequena",
+          "precoUnitario": 15,
+          "quantidade": 5
+        },
+        {
+          "lancheId": "2",
+          "nome": "Pipoca Grande",
+          "precoUnitario": 22,
+          "quantidade": 5
+        },
+        {
+          "lancheId": "3",
+          "nome": "Refrigerante 500ml",
+          "precoUnitario": 8,
+          "quantidade": 1
+        }
+      ],
+      "valorTotal": 443
     }
   ]
 }
