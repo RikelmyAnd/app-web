@@ -1,4 +1,16 @@
 {
-  "filmes": [],
+  "filmes": [
+    {
+      "id": "bf64",
+      "titulo": "It 3: A coisa o inimigo é outro",
+      "sinopse": "O palhaço agora está no espaço",
+      "classificacaoIndicativa": "18",
+      "duracao": 120,
+      "elenco": "Palhaço, Pessoas de CGI",
+      "genero": "Terror",
+      "dataInicialExibicao": "2025-12-01",
+      "dataFinalExibicao": "2025-12-19"
+    }
+  ],
   "sessoes": []
 }

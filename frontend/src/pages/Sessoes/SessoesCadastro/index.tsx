@@ -57,7 +57,7 @@ export const SessoesCadastro = ({ sessao, filmesDisponiveis, salasDisponiveis, o
                                         id="salaId"
                                         value={sessaoState.salaId}
                                         options={opcoesSalas} // Lista preparada
-                                        onChange={(e) => setSessaoState({ ...sessaoState, filmeId: e.target.value })}
+                                        onChange={(e) => setSessaoState({ ...sessaoState, salaId: e.target.value })}
                                         error={erros.salaId}
                                     />
 
@@ -69,7 +69,7 @@ export const SessoesCadastro = ({ sessao, filmesDisponiveis, salasDisponiveis, o
                                                 type="datetime-local"
                                                 value={sessaoState.horario}
                                                 onChange={handleChange}
-                                                error={erros.dataHora}
+                                                error={erros.horario}
                                             />
                                         </div>
                                         <div className="col-md-6">
