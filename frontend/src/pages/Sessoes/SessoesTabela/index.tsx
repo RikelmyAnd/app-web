@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import { Button } from "../../../components/Button";
 import type { ISessao } from "../../../models/sessao.model";
 import type { IFilme } from "../../../models/filmes.model";
